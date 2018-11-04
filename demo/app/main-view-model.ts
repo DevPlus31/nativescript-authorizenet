@@ -9,6 +9,8 @@ export class HelloWorldModel extends Observable {
     super();
 
     this.authorizeNet = new Authorizenet({apiLoginId: 'testing', clientKey: 'testKey'});
+    let card= this.authorizeNet.createCardNumber({cardNumber: '1234567891234', cardExpirationMonth: '06', cardExpirationYear:  '21', ccvCode: '123'})
+      console.log(card.getCardNumber())
     console.log(this.authorizeNet)    // this.message = this.yourPlugin.message;
   }
 }

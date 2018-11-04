@@ -10,15 +10,13 @@ export class Authorizenet extends Common {
     clientKey  = null
 
     constructor(props) {
-        super(props);
+        super();
         this.apiLoginId = props.apiLoginId
         this.clientKey = props.clientKey
         let activity = app.android.startActivity || app.android.foregroundActivity;
         this.apiClient = new net.authorize.acceptsdk.AcceptSDKApiClient.Builder(activity, net.authorize.acceptsdk.AcceptSDKApiClient.Environment.SANDBOX)
             .connectionTimeout(props.Timeout)
             .build()
-
-        console.log(this.apiClient)
     }
 
     private getMerchantAuthentication() {
@@ -54,11 +52,11 @@ export class Authorizenet extends Common {
     public onErrorReceived: (param: net.authorize.acceptsdk.datamodel.transaction.response.ErrorTransactionResponse) => void
 
 
-    createCardNumber(credentials) {
-        return new net.authorize.acceptsdk.datamodel.transaction.CardData(credentials.cardNumber,
+    public createCardNumber(credentials) {
+        return new net.authorize.acceptsdk.datamodel.transaction.CardData.Builder(credentials.cardNumber,
                         credentials.cardExpirationMonth, credentials.cardExpirationYear)
-            .setCvvCode(credentials.ccvCode)
-            .setCardHolderName(credentials.cardHolderName)
+            .cvvCode(credentials.ccvCode)
+            .cardHolderName(credentials.cardHolderName)
             .build()
 
     }
