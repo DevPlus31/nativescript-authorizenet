@@ -1,0 +1,15 @@
+/* Include.gradle configuration: http://docs.nativescript.org/plugins/plugins#includegradle-specification */
+
+
+android {
+//	jcenter()
+
+}
+
+
+dependencies {
+    // Describe plugin native Android dependencies like
+    //compile 'com.android.support:multidex:1.0.3'
+   // compile 'net.authorize:accept-sdk-android:1.0.2'
+  //  implementation 'com.android.support:design:27.1.0'
+}
