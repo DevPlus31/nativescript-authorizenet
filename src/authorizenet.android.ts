@@ -3,7 +3,7 @@ import * as app from "tns-core-modules/application";
 
 declare const net: any;
 
-export class AuthorizeNet extends Common {
+export class Authorizenet extends Common {
 
     apiClient  = null
     apiLoginId = null
@@ -17,6 +17,8 @@ export class AuthorizeNet extends Common {
         this.apiClient = new net.authorize.acceptsdk.AcceptSDKApiClient.Builder(activity, net.authorize.acceptsdk.AcceptSDKApiClient.Environment.SANDBOX)
             .connectionTimeout(props.Timeout)
             .build()
+
+        console.log(this.apiClient)
     }
 
     private getMerchantAuthentication() {
