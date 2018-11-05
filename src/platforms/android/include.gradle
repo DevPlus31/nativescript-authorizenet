@@ -6,10 +6,6 @@ android {
 }
 
 
-repositories {
-    jcenter()
-}
-
 dependencies {
     // Describe plugin native Android dependencies like
     // implementation 'net.authorize:accept-sdk-android:1.0.2'
