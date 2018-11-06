@@ -13,6 +13,7 @@ export class Authorizenet extends Common {
         super();
         this.apiLoginId = props.apiLoginId
         this.clientKey = props.clientKey
+        console.log('Authorizenet starting')
         let activity = app.android.startActivity || app.android.foregroundActivity;
         this.apiClient = new net.authorize.acceptsdk.AcceptSDKApiClient.Builder(activity, net.authorize.acceptsdk.AcceptSDKApiClient.Environment.SANDBOX)
             .connectionTimeout(props.Timeout)
